@@ -80,6 +80,16 @@ public class Main {
         }
 
     }
+    public static void printMyTickets (int id)
+    {
+        TicketBooker booker = new TicketBooker();
+        if(!booker.passengers.containsKey(id))
+        {
+            System.out.println("Passenger detail Unknown");
+        }
+        else
+            booker.printMyTickets(id);
+    }
     public static void cancelTicket(int id)
     {
         TicketBooker booker = new TicketBooker();
@@ -93,19 +103,21 @@ public class Main {
     public static void main(String[] args)
     {
         Scanner s = new Scanner(System.in);
-        boolean loop = true;
-        while(loop)
+
+        while(true)
         {
-            System.out.println(" 1. Book Ticket \n 2. Cancel Ticket \n 3. Available Tickets \n 4. Booked Tickets \n 5. Exit");
+            System.out.println(" 1. Book Ticket \n 2. Cancel Ticket \n 3. Print available Ticket details Of each berth \n 4. Print All Passengers Tickets Details & status  \n 5. My ticket Status   \n 6. Exit   \n Enter Your Choice...");
             int choice = s.nextInt();
             switch(choice)
             {
 
                 case 1:
                 {
-                    System.out.println("Enter Passenger name,age and berth preference (L,M or U)");
+                    System.out.println("Enter Passenger name:");
                     String name = s.next();
+                    System.out.println("Enter Passenger age: ");
                     int age = s.nextInt();
+                    System.out.println("Enter berth preference (L,M or U):");
                     String berthPreference = s.next();
                     Passenger p = new Passenger(name,age,berthPreference);
                     bookTicket(p);
@@ -132,11 +144,17 @@ public class Main {
                 break;
                 case 5:
                 {
-                    loop = false;
+                    System.out.println("Enter passenger Id to Show Ticket Status");
+                    int id = s.nextInt();
+                    printMyTickets(id);
                 }
                 break;
-                default:
-                    break;
+                case 6:
+                {
+                   System.out.println("Exiting the program  ");
+                   System.exit(0);
+                }
+                break;
             }
         }
     }

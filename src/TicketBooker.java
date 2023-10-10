@@ -1,10 +1,10 @@
 import java.util.*;
 public class TicketBooker {
-    static int availableLowerBerths = 10;
-    static int availableMiddleBerths = 10;
-    static int availableUpperBerths = 10;
-    static int availableRacTickets = 5;
-    static int availableWaitingList = 5;
+    static int availableLowerBerths = 2;
+    static int availableMiddleBerths = 1;
+    static int availableUpperBerths = 1;
+    static int availableRacTickets = 1;
+    static int availableWaitingList = 1;
 
     static Queue<Integer> waitingList = new LinkedList<>();
     static Queue<Integer> racList =  new LinkedList<>();
@@ -25,6 +25,10 @@ public class TicketBooker {
         p.alloted = allotedBerth;
         passengers.put(p.passengerId,p);
         bookedTicketList.add(p.passengerId);
+        System.out.println("PASSENGER ID " + p.passengerId );
+        System.out.println("Name: " + p.name);
+        System.out.println("Age: " + p.age);
+        System.out.println("alloted berth: " + p.number+ p.alloted);
         System.out.println("--------------------------Booked Successfully");
     }
 
@@ -136,5 +140,18 @@ public class TicketBooker {
             System.out.println(" Status " + p.number + p.alloted);
             System.out.println("--------------------------");
         }
+    }
+
+
+    public void printMyTickets(int passengerId) {
+        Passenger p = passengers.get(passengerId);
+        System.out.println("PASSENGER ID " + p.passengerId );
+        System.out.println(" Name " + p.name );
+        System.out.println(" Age " + p.age );
+        System.out.println(" Status " + p.number + p.alloted);
+        System.out.println("--------------------------");
+
+
+
     }
 }
