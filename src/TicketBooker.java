@@ -10,11 +10,11 @@ public class TicketBooker {
     static Queue<Integer> racList =  new LinkedList<>();
     static List<Integer> bookedTicketList =  new ArrayList<>();
 
-    static List<Integer> lowerBerthsPositions = new ArrayList<>(Arrays.asList(1,2,3,4,5,6,7,8,9,10));
-    static List<Integer> middleBerthsPositions = new ArrayList<>(Arrays.asList(1,2, 3, 4, 5, 6, 7, 8, 9, 10));
-    static List<Integer> upperBerthsPositions = new ArrayList<>(Arrays.asList(1,2, 3, 4, 5, 6, 7, 8, 9,10));
-    static List<Integer> racPositions = new ArrayList<>(Arrays.asList(1,2, 3, 4, 5));
-    static List<Integer> waitingListPositions = new ArrayList<>(Arrays.asList(1,2,3,4,5));
+    static List<Integer> lowerBerthsPositions = new ArrayList<>(Arrays.asList(1,2));
+    static List<Integer> middleBerthsPositions = new ArrayList<>(Arrays.asList(1));
+    static List<Integer> upperBerthsPositions = new ArrayList<>(Arrays.asList(1));
+    static List<Integer> racPositions = new ArrayList<>(Arrays.asList(1));
+    static List<Integer> waitingListPositions = new ArrayList<>(Arrays.asList(1));
 
     static Map<Integer, Passenger> passengers = new HashMap<>();
 
